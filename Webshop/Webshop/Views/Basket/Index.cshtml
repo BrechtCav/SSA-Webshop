@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Webshop_Models.BasketItem>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Winkelmand</h2>
+
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>Product</th>
+            <th>Eenheidsprijs</th>
+            <th>Aantal</th>
+            <th>Prijs</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelitem => item.Device.Name)</td>
+                <td>@String.Format("{0:C}", item.Device.Price)</td>
+                <td>@Html.DisplayFor(modelitem => item.Count)</td>
+                <td>@String.Format("{0:C}", Webshop_Models.Price.CalculateBasketItemTotal(item))</td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>De totaalprijs bedraagt:</b></td>
+            <td><b>@String.Format("{0:C}", Webshop_Models.Price.CalculateBasketTotal(Model))</b></td>
+        </tr>
+    </table>
+    @Html.ActionLink("Afronden", "Checkout", "Basket", new { @class = "btn btn-lg btn-primary btn-block" })
+    @Html.ActionLink("Wissen", "Remove", "Basket", new { @class = "btn btn-lg btn-primary btn-block" })
+
+}
+else
+{
+    <p>Uw winkelmand is leeg</p>}

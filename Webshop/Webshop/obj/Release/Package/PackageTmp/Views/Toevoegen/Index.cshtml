@@ -1,0 +1,42 @@
+﻿@model Webshop.ViewModel.AddDeviceVM
+
+@{
+    ViewBag.Title = "Index";
+}
+<form method="post">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="card">
+                <h2 class="card-heading simple">Algemeen</h2>
+                <div style="margin-left:20px;">
+                    <label style="margin-top:10px;">Name</label>
+                    @Html.EditorFor(model => model.NewDevice.Name)
+                    <label>Description</label>
+                    @Html.TextAreaFor(model => model.NewDevice.Description)
+                    <label>Price</label>
+                    @Html.EditorFor(model => model.NewDevice.Price)
+                    <label>Rent price</label>
+                    @Html.EditorFor(model => model.NewDevice.RentPrice)
+                    <label>Stock</label>
+                    @Html.EditorFor(model => model.NewDevice.Stock)
+                </div>
+                <h2 class="card-heading simple">Software</h2>
+                <div style="margin-left:20px;">
+
+                    <div class="panel panel-default">
+                        <p style="font-size:18px; margin-top:10px;">Operating Systems</p>
+                        <div class="panel-body">
+                            @Html.ListBoxFor(m => m.SelectedOS, new MultiSelectList(@Model.OperatingSystems, "ID", "Name"))
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <p style="font-size:18px; margin-top:10px;">Programming Frameworks</p>
+                        <div class="panel-body">
+                                @Html.ListBoxFor(m => m.SelectedFrameworks, new MultiSelectList(@Model.Frameworks, "ID", "Name"))
+                        </div>
+                    </div>
+                    <input style="margin-top:18px; margin-bottom:18px;" type="submit" value="Save" class="btn" />
+            </div>
+        </div>
+    </div></div>
+</form>

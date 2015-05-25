@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "CountBasketItems";
+}
+@if(ViewBag.Count >= 2)
+{
+    <p style="margin-top:15px;">@ViewBag.Count items</p>
+}
+else if (ViewBag.Count == 0)
+{
+    <p style="margin-top:15px;">@ViewBag.Count items</p>
+}
+else
+{
+    <p style="margin-top:15px;">@ViewBag.Count item</p>
+}
+
+

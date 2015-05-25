@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Webshop.Models.Device>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row-fluid">
+    @foreach (Webshop.Models.Device dev in Model)
+    {
+        <div class="span4">
+            <div class="card">
+                <h2 class="card-heading simple">@dev.Name.Split('-').First()</h2>
+                <div class="card-body">
+                    @if (dev.Description.Length <= 150)
+                    {
+                        <p>@dev.Description</p>
+                    }
+                    else
+                    {
+                        <p>@dev.Description.Substring(0,150) ...</p>
+                    }
+                    <p><a class="btn" href="~/Cataloog/Detail/@dev.ID">Meer info &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

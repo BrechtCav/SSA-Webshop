@@ -1,0 +1,4 @@
+C:\School\Semester 4\Server Side Advanced\Labo Oplossingen\Week 4\Webshop\Webshop-Models\bin\Release\Webshop-Models.dll
+C:\School\Semester 4\Server Side Advanced\Labo Oplossingen\Week 4\Webshop\Webshop-Models\bin\Release\Webshop-Models.pdb
+C:\School\Semester 4\Server Side Advanced\Labo Oplossingen\Week 4\Webshop\Webshop-Models\obj\Release\Webshop-Models.dll
+C:\School\Semester 4\Server Side Advanced\Labo Oplossingen\Week 4\Webshop\Webshop-Models\obj\Release\Webshop-Models.pdb

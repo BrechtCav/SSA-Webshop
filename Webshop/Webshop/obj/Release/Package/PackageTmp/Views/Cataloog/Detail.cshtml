@@ -1,0 +1,21 @@
+﻿@model Webshop.Models.Device
+@{
+    ViewBag.Title = "Detail";
+}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="card">
+            <h2 class="card-heading simple">@Model.Name.Split('-').First()</h2>
+            <div style="margin-left:20px;">
+
+                <img src="~/DeviceImages/@Model.Picture" />
+                <label>Model</label>
+                <p>@Model.Name</p>
+                <label>Huur mij voor</label>
+                <p>@Model.RentPrice.ToString("0.00")</p>
+                <label>Stock te verhuren</label>
+                <p>@Model.Stock</p>
+            </div>
+        </div>
+    </div>
+</div>
